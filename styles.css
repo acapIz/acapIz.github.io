@@ -305,3 +305,13 @@
       .modal-gallery img:last-child { grid-column: span 2; aspect-ratio: 21/9; }
       .nav-links { display: none; } 		/* Hide sub-links on mobile for clean look, or adjust as needed */
     }
+	
+	/* This makes the video behave exactly like your images did */
+	.sc-thumb video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover; /* This makes sure the video fills the box without stretching */
+		display: block;
+	}
+	
+	
