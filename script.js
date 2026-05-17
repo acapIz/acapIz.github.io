@@ -1,8 +1,16 @@
  // Nav scroll state
   const nav = document.getElementById('nav');
+  let ticking = false;
+
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  });
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', window.scrollY > 40);
+        ticking = false;
+     });
+      ticking = true;
+    }
+  }, { passive: true }); // 'passive' tells the phone it can scroll smoothly without waiting for JS
 
   // --- Modal Logic (UPDATED FOR MULTIPLE MODALS) ---
   let currentModal = null;
