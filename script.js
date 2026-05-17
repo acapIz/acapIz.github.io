@@ -31,14 +31,12 @@
     document.body.style.overflow = ''; // Restore background scrolling
   }
 
-  // Close project modal if clicking outside the content box
-  document.querySelectorAll('.modal-overlay').forEach(modal => {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeProjectModal();
-      }
-    });
-  });
+  // A single listener handles all modal overlay clicks instantly
+document.body.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal-overlay')) {
+    closeProjectModal();
+  }
+});
 
   // --- Lightbox Logic ---
   const lightboxModal = document.getElementById('lightbox-modal');
