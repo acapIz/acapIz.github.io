@@ -253,6 +253,13 @@
                     <p class="sc-desc">A project to create an album; collecting multiple photos and images into an ambul, design for showcasing the taken photo.</p>
                 </div>
             </div>
+            <div class="sc-card" onclick="openProjectModal('modal-ArtworkDrawingPersonal')">
+                <div class="sc-thumb"><img src="./Misc/ArtworkPersonal/ArtworkPersonal.webp" alt="Thumbnail" loading="lazy"></div>
+                <div class="sc-info">
+                    <h3 class="sc-title">Personal Collection | Drawing and artwork showcase</h3>
+                    <p class="sc-desc">A portfolio collection of many artwork (digital and traditional) made throughout my academic journey and personal projects.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -855,6 +862,39 @@
   </div>
 </div>
 
+<div id="modal-ArtworkDrawingPersonal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close-btn" onclick="closeProjectModal()">×</button>
+        <div class="modal-body">
+            <div class="modal-header">
+                <h2 class="modal-title">Personal Collection | Drawing and artwork showcase</h2>
+                <a href="https://cara.app/capstoneartstuff" target="_blank" rel="noopener" class="modal-link-btn">Visit Project ↗</a>
+            </div>
+            <p class="modal-main-desc"> A portfolio collection of many artwork (digital and traditional) made throughout my academic journey and personal projects. All the artwork is hosted on social media platofrm Cara.</p>
+            <!--
+            <div class="modal-gallery">
+                <img src="./Misc/Sem2PhotographyAlbum/Photo_Album.webp" alt="Gallery Image" loading="lazy" onclick="openLightbox(this.src)">
+                <img src="./Misc/Sem2PhotographyAlbum/Photo_Album2.webp" alt="Gallery Image" loading="lazy" onclick="openLightbox(this.src)">
+                <img src="./Misc/Sem2PhotographyAlbum/Photo_Album3.webp" alt="Gallery Image" loading="lazy" onclick="openLightbox(this.src)">
+                <img src="./Misc/Sem2PhotographyAlbum/Photo_Album4.webp" alt="Gallery Image" loading="lazy" onclick="openLightbox(this.src)">
+            </div>
+            -->
+            <!--
+            <div class="modal-details-grid">
+              <div class="detail-block"><div class="detail-small-title">The Challenge</div><p class="detail-desc">Challenge details...</p></div>
+              <div class="detail-block"><div class="detail-small-title">The Solution</div><p class="detail-desc">Solution details...</p></div>
+              <div class="detail-block"><div class="detail-small-title">The Outcome</div><p class="detail-desc">Outcome details...</p></div>
+            </div>
+            -->
+            <div class="modal-tags-section">
+                <div class="tags-label">Technologies &amp; Tools Used</div>
+                <div class="modal-tags-list">
+                    <span class="modal-tag">Procreate</span><span class="modal-tag">Photoshop</span><span class="modal-tag">Pinterest</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightbox()">
   <button class="lightbox-close-btn" onclick="closeLightbox()">×</button>
