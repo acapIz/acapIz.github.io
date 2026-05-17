@@ -63,7 +63,12 @@
       z-index: -1;
     }
 
-    .container { width: min(var(--max), 100% - 3rem); margin-inline: auto; position: relative; z-index: 1; }
+    .container { 
+      width: min(var(--max), calc(100% - 3rem)); /* Added calc() for mobile support */
+      margin-inline: auto; 
+      position: relative; 
+      z-index: 1; 
+    }
     .section { padding-block: clamp(4rem, 8vw, 6rem); border-bottom: 1px solid var(--border); background: var(--bg); }
     
     .section-title {
@@ -135,7 +140,8 @@
     /* ── SHOWCASE GRID & CARDS ───────────────────────────── */
     .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      /* Protects mobile viewports smaller than 320px from layout blowouts */
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
       gap: 1.5rem;
     }
     .sc-card {
@@ -298,20 +304,30 @@
     }
     .lightbox-overlay.active .lightbox-img { transform: scale(1); }
 
-    /* ── RESPONSIVE ──────────────────────────────────────── */
+/* ── RESPONSIVE ──────────────────────────────────────── */
     @media (max-width: 768px) {
       .modal-body { padding: 1.5rem; }
       .modal-gallery { grid-template-columns: repeat(2, 1fr); }
       .modal-gallery img:last-child { grid-column: span 2; aspect-ratio: 21/9; }
-      .nav-links { display: none; } 		/* Hide sub-links on mobile for clean look, or adjust as needed */
+      .nav-links { display: none; } /* Hide sub-links on mobile for clean look */
+      
+      /* FORCE REVEAL SAFETY NET FOR MOBILE COMPOSITOR BUG */
+      .section, .container, .sc-card, .sc-info, .sc-title, .sc-desc {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+      }
+      .showcase-grid {
+        display: grid !important; /* Keep grid structure active */
+      }
     }
-	
-	/* This makes the video behave exactly like your images did */
-	.sc-thumb video {
-		width: 100%;
-		height: 100%;
-		object-fit: cover; /* This makes sure the video fills the box without stretching */
-		display: block;
-	}
+
+    /* This makes the video behave exactly like your images did */
+    .sc-thumb video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* This makes sure the video fills the box without stretching */
+      display: block;
+    }
 	
 	
