@@ -294,10 +294,9 @@
     
     /* OVERRIDE GLOBAL IMG WIDTH FOR LIGHTBOX */
     .lightbox-img {
-      width: auto; 							/* This fixes the stretching! */          
-      max-width: 95vw;
-      max-height: 90vh;
-      object-fit: contain;  				/* Ensures aspect ratio is always kept */ 
+      width: 95vw;
+      height: 90vh;
+      object-fit: contain;  				/* Ensures aspect ratio is always kept and scales smaller images up to fit the viewport */ 
       border-radius: 4px;
       box-shadow: 0 0 50px rgba(0,0,0,0.8);
       transform: scale(0.95); transition: transform .3s ease;
